@@ -16,6 +16,10 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
 
+  // Only use transparent navbar on home page, white background on all other pages
+  const isHomePage = location.pathname === '/'
+  const shouldBeTransparent = isHomePage && !isScrolled
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0)
@@ -27,7 +31,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        shouldBeTransparent ? 'bg-transparent' : 'bg-white shadow-md'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +39,7 @@ export default function Navbar() {
           <Link to="/" className="flex-shrink-0 flex items-center">
             <div className="flex items-center space-x-2">
               <svg
-                className={`w-10 h-10 ${isScrolled ? 'text-primary' : 'text-white'}`}
+                className={`w-10 h-10 ${shouldBeTransparent ? 'text-white' : 'text-primary'}`}
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -48,7 +52,7 @@ export default function Navbar() {
                 <path d="M12 10h.01" />
                 <path d="M16 10h.01" />
               </svg>
-              <span className={`text-2xl font-bold ${isScrolled ? 'text-primary' : 'text-white'}`}>
+              <span className={`text-2xl font-bold ${shouldBeTransparent ? 'text-white' : 'text-primary'}`}>
                 Focus Recruitment
               </span>
             </div>
@@ -63,8 +67,8 @@ export default function Navbar() {
                   to={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     location.pathname === item.href
-                      ? isScrolled ? 'text-primary' : 'text-white'
-                      : isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white/80 hover:text-white'
+                      ? shouldBeTransparent ? 'text-white' : 'text-primary'
+                      : shouldBeTransparent ? 'text-white/80 hover:text-white' : 'text-gray-700 hover:text-primary'
                   }`}
                 >
                   {item.name}
@@ -73,9 +77,9 @@ export default function Navbar() {
               <Link
                 to="/contact"
                 className={`ml-4 px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  isScrolled
-                    ? 'bg-primary text-white hover:bg-primary/90'
-                    : 'bg-white text-primary hover:bg-white/90'
+                  shouldBeTransparent
+                    ? 'bg-white text-primary hover:bg-white/90'
+                    : 'bg-primary text-white hover:bg-primary/90'
                 }`}
               >
                 Hire Now
@@ -88,7 +92,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md ${
-                isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-white/80'
+                shouldBeTransparent ? 'text-white hover:text-white/80' : 'text-gray-700 hover:text-primary'
               } focus:outline-none`}
             >
               <span className="sr-only">Open main menu</span>

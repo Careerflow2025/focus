@@ -40,7 +40,7 @@ const categories = [
   'HR & Recruitment', 'Legal', 'Social Work', 'Planning & Urban Dev',
   'Finance & Bookkeeping', 'Engineering', 'Operations', 'Executive & C-Level',
   'Healthcare', 'Data & Analytics', 'Project Management', 'Content Writing',
-  'Education & Training', 'Logistics', 'Real Estate'
+  'Education & Training', 'Logistics', 'Real Estate', 'Dental'
 ]
 
 // Extended UK locations - London first, then Remote, then alphabetically sorted cities
@@ -1302,6 +1302,401 @@ const additionalJobListings: Job[] = [
       'Strong knowledge of UK accounting standards'
     ],
     severity: 'high'
+  },
+  // Dental Nurse positions
+  {
+    title: 'Dental Nurse',
+    category: 'Dental',
+    description: 'Support dental professionals in providing high-quality patient care. Assist with procedures and maintain clinic standards.',
+    locations: ['London'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Assist dentists during procedures',
+      'Prepare treatment rooms and sterilize equipment',
+      'Update patient records and maintain confidentiality',
+      'Provide chairside assistance',
+      'Process dental instruments and materials',
+      'Support patient comfort and care'
+    ],
+    requirements: [
+      'GDC registered Dental Nurse',
+      '1+ years of dental nursing experience',
+      'Knowledge of infection control procedures',
+      'Strong communication skills',
+      'Patient-focused approach',
+      'Ability to work in a team'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dental Nurse',
+    category: 'Dental',
+    description: 'Support dental professionals in providing high-quality patient care. Assist with procedures and maintain clinic standards.',
+    locations: ['Birmingham'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Assist dentists during procedures',
+      'Prepare treatment rooms and sterilize equipment',
+      'Update patient records and maintain confidentiality',
+      'Provide chairside assistance',
+      'Process dental instruments and materials',
+      'Support patient comfort and care'
+    ],
+    requirements: [
+      'GDC registered Dental Nurse',
+      '1+ years of dental nursing experience',
+      'Knowledge of infection control procedures',
+      'Strong communication skills',
+      'Patient-focused approach',
+      'Ability to work in a team'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dental Nurse',
+    category: 'Dental',
+    description: 'Support dental professionals in providing high-quality patient care. Assist with procedures and maintain clinic standards.',
+    locations: ['Coventry'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Assist dentists during procedures',
+      'Prepare treatment rooms and sterilize equipment',
+      'Update patient records and maintain confidentiality',
+      'Provide chairside assistance',
+      'Process dental instruments and materials',
+      'Support patient comfort and care'
+    ],
+    requirements: [
+      'GDC registered Dental Nurse',
+      '1+ years of dental nursing experience',
+      'Knowledge of infection control procedures',
+      'Strong communication skills',
+      'Patient-focused approach',
+      'Ability to work in a team'
+    ],
+    severity: 'high'
+  },
+  // Dentist positions
+  {
+    title: 'Dentist',
+    category: 'Dental',
+    description: 'Provide comprehensive dental care to patients. Perform examinations, diagnoses, and treatments while maintaining high clinical standards.',
+    locations: ['London'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Conduct dental examinations and diagnoses',
+      'Perform dental procedures and treatments',
+      'Develop treatment plans for patients',
+      'Maintain accurate patient records',
+      'Ensure compliance with GDC standards',
+      'Provide preventive dental care advice'
+    ],
+    requirements: [
+      'GDC registered Dentist',
+      '3+ years of clinical experience',
+      'BDS or equivalent dental degree',
+      'Strong clinical skills',
+      'Excellent patient communication',
+      'Commitment to continuing professional development'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dentist',
+    category: 'Dental',
+    description: 'Provide comprehensive dental care to patients. Perform examinations, diagnoses, and treatments while maintaining high clinical standards.',
+    locations: ['Birmingham'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Conduct dental examinations and diagnoses',
+      'Perform dental procedures and treatments',
+      'Develop treatment plans for patients',
+      'Maintain accurate patient records',
+      'Ensure compliance with GDC standards',
+      'Provide preventive dental care advice'
+    ],
+    requirements: [
+      'GDC registered Dentist',
+      '3+ years of clinical experience',
+      'BDS or equivalent dental degree',
+      'Strong clinical skills',
+      'Excellent patient communication',
+      'Commitment to continuing professional development'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dentist',
+    category: 'Dental',
+    description: 'Provide comprehensive dental care to patients. Perform examinations, diagnoses, and treatments while maintaining high clinical standards.',
+    locations: ['Coventry'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Conduct dental examinations and diagnoses',
+      'Perform dental procedures and treatments',
+      'Develop treatment plans for patients',
+      'Maintain accurate patient records',
+      'Ensure compliance with GDC standards',
+      'Provide preventive dental care advice'
+    ],
+    requirements: [
+      'GDC registered Dentist',
+      '3+ years of clinical experience',
+      'BDS or equivalent dental degree',
+      'Strong clinical skills',
+      'Excellent patient communication',
+      'Commitment to continuing professional development'
+    ],
+    severity: 'high'
+  },
+  // Dental Hygienist positions
+  {
+    title: 'Dental Hygienist',
+    category: 'Dental',
+    description: 'Provide professional dental hygiene services and preventive care. Educate patients on oral health maintenance.',
+    locations: ['London'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Perform dental cleanings and scaling',
+      'Apply preventive treatments',
+      'Take and develop dental x-rays',
+      'Educate patients on oral hygiene',
+      'Assess patient oral health',
+      'Maintain treatment records'
+    ],
+    requirements: [
+      'GDC registered Dental Hygienist',
+      '2+ years of experience',
+      'Diploma in Dental Hygiene',
+      'Strong technical skills',
+      'Patient education abilities',
+      'Attention to detail'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dental Hygienist',
+    category: 'Dental',
+    description: 'Provide professional dental hygiene services and preventive care. Educate patients on oral health maintenance.',
+    locations: ['Birmingham'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Perform dental cleanings and scaling',
+      'Apply preventive treatments',
+      'Take and develop dental x-rays',
+      'Educate patients on oral hygiene',
+      'Assess patient oral health',
+      'Maintain treatment records'
+    ],
+    requirements: [
+      'GDC registered Dental Hygienist',
+      '2+ years of experience',
+      'Diploma in Dental Hygiene',
+      'Strong technical skills',
+      'Patient education abilities',
+      'Attention to detail'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dental Hygienist',
+    category: 'Dental',
+    description: 'Provide professional dental hygiene services and preventive care. Educate patients on oral health maintenance.',
+    locations: ['Coventry'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Perform dental cleanings and scaling',
+      'Apply preventive treatments',
+      'Take and develop dental x-rays',
+      'Educate patients on oral hygiene',
+      'Assess patient oral health',
+      'Maintain treatment records'
+    ],
+    requirements: [
+      'GDC registered Dental Hygienist',
+      '2+ years of experience',
+      'Diploma in Dental Hygiene',
+      'Strong technical skills',
+      'Patient education abilities',
+      'Attention to detail'
+    ],
+    severity: 'high'
+  },
+  // Dental Receptionist positions
+  {
+    title: 'Dental Receptionist',
+    category: 'Dental',
+    description: 'Manage front desk operations and provide excellent patient service. Handle appointments and administrative tasks.',
+    locations: ['London'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Manage appointment scheduling',
+      'Greet and register patients',
+      'Handle phone and email inquiries',
+      'Process payments and insurance claims',
+      'Maintain patient records',
+      'Coordinate with dental team'
+    ],
+    requirements: [
+      '1+ years of reception experience',
+      'Experience in dental or healthcare setting preferred',
+      'Strong organizational skills',
+      'Excellent communication skills',
+      'Proficiency in dental software',
+      'Customer service focused'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dental Receptionist',
+    category: 'Dental',
+    description: 'Manage front desk operations and provide excellent patient service. Handle appointments and administrative tasks.',
+    locations: ['Birmingham'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Manage appointment scheduling',
+      'Greet and register patients',
+      'Handle phone and email inquiries',
+      'Process payments and insurance claims',
+      'Maintain patient records',
+      'Coordinate with dental team'
+    ],
+    requirements: [
+      '1+ years of reception experience',
+      'Experience in dental or healthcare setting preferred',
+      'Strong organizational skills',
+      'Excellent communication skills',
+      'Proficiency in dental software',
+      'Customer service focused'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dental Receptionist',
+    category: 'Dental',
+    description: 'Manage front desk operations and provide excellent patient service. Handle appointments and administrative tasks.',
+    locations: ['Coventry'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Manage appointment scheduling',
+      'Greet and register patients',
+      'Handle phone and email inquiries',
+      'Process payments and insurance claims',
+      'Maintain patient records',
+      'Coordinate with dental team'
+    ],
+    requirements: [
+      '1+ years of reception experience',
+      'Experience in dental or healthcare setting preferred',
+      'Strong organizational skills',
+      'Excellent communication skills',
+      'Proficiency in dental software',
+      'Customer service focused'
+    ],
+    severity: 'high'
+  },
+  // Dental Therapist positions
+  {
+    title: 'Dental Therapist',
+    category: 'Dental',
+    description: 'Provide clinical dental care including fillings, extractions, and preventive treatments. Work alongside dentists to deliver comprehensive care.',
+    locations: ['London'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Perform dental fillings and simple extractions',
+      'Conduct oral health assessments',
+      'Provide preventive dental care',
+      'Administer local anaesthesia',
+      'Take dental impressions',
+      'Educate patients on oral health'
+    ],
+    requirements: [
+      'GDC registered Dental Therapist',
+      '2+ years of clinical experience',
+      'BSc in Dental Therapy or equivalent',
+      'Strong clinical skills',
+      'Excellent patient care',
+      'Knowledge of current dental practices'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dental Therapist',
+    category: 'Dental',
+    description: 'Provide clinical dental care including fillings, extractions, and preventive treatments. Work alongside dentists to deliver comprehensive care.',
+    locations: ['Birmingham'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Perform dental fillings and simple extractions',
+      'Conduct oral health assessments',
+      'Provide preventive dental care',
+      'Administer local anaesthesia',
+      'Take dental impressions',
+      'Educate patients on oral health'
+    ],
+    requirements: [
+      'GDC registered Dental Therapist',
+      '2+ years of clinical experience',
+      'BSc in Dental Therapy or equivalent',
+      'Strong clinical skills',
+      'Excellent patient care',
+      'Knowledge of current dental practices'
+    ],
+    severity: 'high'
+  },
+  {
+    title: 'Dental Therapist',
+    category: 'Dental',
+    description: 'Provide clinical dental care including fillings, extractions, and preventive treatments. Work alongside dentists to deliver comprehensive care.',
+    locations: ['Coventry'],
+    email: 'info@focusrecruitment.co.uk',
+    phone: '02039473993',
+    hours: 'Full-time (UK hours)',
+    responsibilities: [
+      'Perform dental fillings and simple extractions',
+      'Conduct oral health assessments',
+      'Provide preventive dental care',
+      'Administer local anaesthesia',
+      'Take dental impressions',
+      'Educate patients on oral health'
+    ],
+    requirements: [
+      'GDC registered Dental Therapist',
+      '2+ years of clinical experience',
+      'BSc in Dental Therapy or equivalent',
+      'Strong clinical skills',
+      'Excellent patient care',
+      'Knowledge of current dental practices'
+    ],
+    severity: 'high'
   }
 ]
 
@@ -1316,6 +1711,7 @@ export default function Jobs() {
   const [currentPage, setCurrentPage] = useState(1)
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false)
   const [selectedJobForApply, setSelectedJobForApply] = useState<any>(null)
+  const [showFilters, setShowFilters] = useState(true)
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -1411,6 +1807,15 @@ export default function Jobs() {
     setCurrentPage(1)
   }
 
+  const handleSearch = () => {
+    setShowFilters(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleShowFilters = () => {
+    setShowFilters(true)
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -1442,19 +1847,63 @@ export default function Jobs() {
       </section>
 
       {/* Search and Filters */}
-      <section className="py-8 bg-white shadow-md sticky top-0 z-50">
+      <section className={`py-4 md:py-8 bg-white shadow-md ${showFilters ? 'sticky top-0 z-50' : 'relative'}`}>
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-6">
-            <div className="w-full md:w-1/3">
-              <input
-                type="text"
-                placeholder="Search jobs..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
+          {/* Mobile Filter Toggle Button - Show when filters are hidden */}
+          {!showFilters && (
+            <div className="md:hidden space-y-3">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex-1">
+                  <div className="text-sm text-gray-600 mb-1">Active Filters:</div>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedCategory && (
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
+                        {selectedCategory}
+                      </span>
+                    )}
+                    {selectedLocation && (
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
+                        {selectedLocation}
+                      </span>
+                    )}
+                    {searchQuery && (
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
+                        "{searchQuery}"
+                      </span>
+                    )}
+                    {!selectedCategory && !selectedLocation && !searchQuery && (
+                      <span className="text-sm text-gray-500">No filters applied</span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={handleShowFilters}
+                className="w-full px-4 py-3 bg-primary text-white rounded-lg flex items-center justify-center gap-2 font-medium"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                </svg>
+                Modify Filters
+              </motion.button>
             </div>
-            <div className="w-full md:w-1/3 relative" ref={locationDropdownRef}>
+          )}
+
+          {/* Filters Content */}
+          <div className={`${showFilters ? 'block' : 'hidden md:block'}`}>
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-4 md:mb-6">
+              <div className="w-full md:w-1/3">
+                <input
+                  type="text"
+                  placeholder="Search jobs..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </div>
+              <div className="w-full md:w-1/3 relative" ref={locationDropdownRef}>
               <div
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent cursor-pointer flex items-center justify-between"
                 onClick={() => setIsLocationDropdownOpen(!isLocationDropdownOpen)}
@@ -1517,44 +1966,55 @@ export default function Jobs() {
                 </div>
               )}
             </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={clearFilters}
-              className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors duration-200"
-            >
-              Clear Filters
-            </motion.button>
-          </div>
-
-          <div className="flex flex-wrap gap-2 justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedCategory(null)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                selectedCategory === null
-                  ? 'bg-primary text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              All Jobs
-            </motion.button>
-            {categories.map((category) => (
+            </div>
+            <div className="flex gap-2 w-full md:w-auto">
               <motion.button
-                key={category}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setSelectedCategory(category)}
+                onClick={handleSearch}
+                className="md:hidden flex-1 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium"
+              >
+                Search
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={clearFilters}
+                className="flex-1 md:flex-none px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors duration-200"
+              >
+                Clear Filters
+              </motion.button>
+            </div>
+
+            <div className="flex flex-wrap gap-2 justify-center mt-4">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedCategory(null)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                  selectedCategory === category
+                  selectedCategory === null
                     ? 'bg-primary text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
-                {category}
+                All Jobs
               </motion.button>
-            ))}
+              {categories.map((category) => (
+                <motion.button
+                  key={category}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+                    selectedCategory === category
+                      ? 'bg-primary text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {category}
+                </motion.button>
+              ))}
+            </div>
           </div>
         </div>
       </section>

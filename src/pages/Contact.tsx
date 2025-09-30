@@ -140,7 +140,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4">
