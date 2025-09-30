@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navigation = [
-  { name: 'Jobs', href: '/' },
   { name: 'About Us', href: '/about' },
   { name: 'Why Choose Us', href: '/why-choose-us' },
   { name: 'Services', href: '/services' },

@@ -1,6 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 const fadeInUp = {
@@ -306,10 +304,6 @@ const process = [
 ]
 
 export default function Services() {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const initialServices = services.slice(0, 3)
-  const remainingServices = services.slice(3)
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -345,13 +339,13 @@ export default function Services() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {initialServices.map((service, index) => (
+            {services.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial="initial"
                 animate="animate"
                 variants={fadeInUp}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200"
               >
                 <div className="text-primary mb-4">{service.icon}</div>
@@ -369,61 +363,7 @@ export default function Services() {
                 </ul>
               </motion.div>
             ))}
-
-            <AnimatePresence>
-              {isExpanded && remainingServices.map((service, index) => (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ 
-                    duration: 0.4,
-                    delay: index * 0.1,
-                    ease: [0.6, -0.05, 0.01, 0.99]
-                  }}
-                  className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200"
-                >
-                  <div className="text-primary mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-gray-600">
-                        <svg className="w-4 h-4 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </AnimatePresence>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center mt-12"
-          >
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-200"
-            >
-              {isExpanded ? 'Show Less' : 'Show More Services'}
-              <motion.svg
-                className="ml-2 w-5 h-5"
-                animate={{ rotate: isExpanded ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </motion.svg>
-            </button>
-          </motion.div>
         </div>
       </section>
 
