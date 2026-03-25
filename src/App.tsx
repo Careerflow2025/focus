@@ -8,6 +8,7 @@ import WhyChooseUs from './pages/WhyChooseUs'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Jobs from './pages/Jobs'
+import Partnership from './pages/Partnership'
 import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/why-choose-us" element={<WhyChooseUs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/partnership" element={<Partnership />} />
           </Routes>
         </main>
         <Footer />

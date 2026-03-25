@@ -8,6 +8,7 @@ const navigation = {
     { name: 'About Us', href: '/about' },
     { name: 'Why Choose Us', href: '/why-choose-us' },
     { name: 'Services', href: '/services' },
+    { name: 'Partnership', href: '/partnership' },
     { name: 'Contact', href: '/contact' },
   ],
   social: [
