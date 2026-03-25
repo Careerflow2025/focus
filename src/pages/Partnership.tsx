@@ -2,6 +2,9 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 
+// Initialize EmailJS once
+emailjs.init({ publicKey: 'I9jsCcLG5BmWrWZXx' })
+
 // ── animation variants ──────────────────────────────────────────────
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
@@ -235,20 +238,24 @@ export default function Partnership() {
     setSubmitStatus('idle')
 
     try {
-      await emailjs.send(
-        'service_l7eb08w',
-        'template_1gy2ljs',
-        {
-          from_name: formData.fullName,
-          from_email: formData.email,
-          to_email: 'info@focusrecruitment.co.uk',
-          message: `PARTNERSHIP APPLICATION\n\nName: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nLocation: ${formData.location}\nExperience: ${formData.experience || 'None'}\nPreferred Industry: ${formData.industry || 'Not specified'}\nAvailability: ${formData.availability || 'Not specified'}\n\nMotivation:\n${formData.motivation}`,
-          type: 'partnership',
-          service: 'Partnership Application',
-          cv_name: 'N/A',
-        },
-        'I9jsCcLG5BmWrWZXx'
-      )
+      await emailjs.send('service_l7eb08w', 'template_1gy2ljs', {
+        from_name: formData.fullName,
+        from_email: formData.email,
+        message: [
+          'PARTNERSHIP APPLICATION',
+          '',
+          `Name: ${formData.fullName}`,
+          `Email: ${formData.email}`,
+          `Phone: ${formData.phone}`,
+          `Location: ${formData.location}`,
+          `Experience: ${formData.experience || 'None'}`,
+          `Preferred Industry: ${formData.industry || 'Not specified'}`,
+          `Availability: ${formData.availability || 'Not specified'}`,
+          '',
+          'Motivation:',
+          formData.motivation,
+        ].join('\n'),
+      })
       setSubmitStatus('success')
       setFormData({
         fullName: '',
@@ -260,7 +267,8 @@ export default function Partnership() {
         availability: '',
         motivation: '',
       })
-    } catch {
+    } catch (error) {
+      console.error('Partnership form EmailJS error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
