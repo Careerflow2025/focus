@@ -2,9 +2,6 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 
-// Initialize EmailJS once
-emailjs.init({ publicKey: 'I9jsCcLG5BmWrWZXx' })
-
 // ── animation variants ──────────────────────────────────────────────
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
@@ -238,24 +235,30 @@ export default function Partnership() {
     setSubmitStatus('idle')
 
     try {
-      await emailjs.send('service_l7eb08w', 'template_1gy2ljs', {
+      const templateParams = {
         from_name: formData.fullName,
         from_email: formData.email,
         message: [
           'PARTNERSHIP APPLICATION',
           '',
-          `Name: ${formData.fullName}`,
-          `Email: ${formData.email}`,
-          `Phone: ${formData.phone}`,
-          `Location: ${formData.location}`,
-          `Experience: ${formData.experience || 'None'}`,
-          `Preferred Industry: ${formData.industry || 'Not specified'}`,
-          `Availability: ${formData.availability || 'Not specified'}`,
+          'Name: ' + formData.fullName,
+          'Email: ' + formData.email,
+          'Phone: ' + formData.phone,
+          'Location: ' + formData.location,
+          'Experience: ' + (formData.experience || 'None'),
+          'Preferred Industry: ' + (formData.industry || 'Not specified'),
+          'Availability: ' + (formData.availability || 'Not specified'),
           '',
           'Motivation:',
           formData.motivation,
         ].join('\n'),
-      })
+      }
+      await emailjs.send(
+        'service_l7eb08w',
+        'template_1gy2ljs',
+        templateParams,
+        'I9jsCcLG5BmWrWZXx'
+      )
       setSubmitStatus('success')
       setFormData({
         fullName: '',
