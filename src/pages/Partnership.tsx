@@ -241,8 +241,11 @@ export default function Partnership() {
         {
           from_name: formData.fullName,
           from_email: formData.email,
+          to_email: 'info@focusrecruitment.co.uk',
           message: `PARTNERSHIP APPLICATION\n\nName: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nLocation: ${formData.location}\nExperience: ${formData.experience || 'None'}\nPreferred Industry: ${formData.industry || 'Not specified'}\nAvailability: ${formData.availability || 'Not specified'}\n\nMotivation:\n${formData.motivation}`,
           type: 'partnership',
+          service: 'Partnership Application',
+          cv_name: 'N/A',
         },
         'I9jsCcLG5BmWrWZXx'
       )
