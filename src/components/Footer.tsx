@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 
@@ -29,6 +29,8 @@ const navigation = {
 }
 
 export default function Footer() {
+  const location = useLocation()
+  const isPartnership = location.pathname === '/partnership'
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
@@ -62,12 +64,12 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className={`${isPartnership ? 'bg-[#050505] border-t border-[#d4a853]/10' : 'bg-gray-900'} text-white`}>
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Focus Recruitment</h3>
+            <h3 className={`text-xl font-bold mb-4 ${isPartnership ? 'text-[#d4a853]' : ''}`}>Focus Recruitment</h3>
             <p className="text-gray-400 mb-4">
               Connecting exceptional talent with outstanding companies.
             </p>
@@ -87,7 +89,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isPartnership ? 'text-[#d4a853]' : ''}`}>Quick Links</h3>
             <ul className="space-y-2">
               {navigation.main.map((item) => (
                 <li key={item.name}>
@@ -104,7 +106,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isPartnership ? 'text-[#d4a853]' : ''}`}>Contact Us</h3>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-start">
                 <svg className="w-5 h-5 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,7 +137,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isPartnership ? 'text-[#d4a853]' : ''}`}>Newsletter</h3>
             <p className="text-gray-400 mb-4">
               Subscribe to our newsletter for the latest updates and job opportunities.
             </p>
@@ -155,7 +157,7 @@ export default function Footer() {
                 className={`px-4 py-2 rounded text-white font-medium transition-colors duration-200 ${
                   isSubmitting
                     ? 'bg-gray-600 cursor-not-allowed'
-                    : 'bg-primary hover:bg-primary-dark'
+                    : isPartnership ? 'bg-gradient-to-r from-[#d4a853] to-[#c9942e] text-[#080808]' : 'bg-primary hover:bg-primary-dark'
                 }`}
               >
                 {isSubmitting ? (

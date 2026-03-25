@@ -120,12 +120,6 @@ const steps = [
   },
 ]
 
-const earningTiers = [
-  { placements: '1-2', fee: '\u00a33,000\u2013\u00a36,000', monthly: '\u00a31,500\u2013\u00a33,000', label: 'Getting Started' },
-  { placements: '3-5', fee: '\u00a39,000\u2013\u00a315,000', monthly: '\u00a34,500\u2013\u00a37,500', label: 'Building Momentum' },
-  { placements: '5-8', fee: '\u00a315,000\u2013\u00a324,000', monthly: '\u00a37,500\u2013\u00a312,000', label: 'Established Partner' },
-  { placements: '8+', fee: '\u00a324,000+', monthly: '\u00a312,000\u2013\u00a320,000+', label: 'Top Performer' },
-]
 
 const faqs = [
   {
@@ -610,90 +604,6 @@ export default function Partnership() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </AnimatedSection>
-
-      {/* ════════════════════════════════════════════════════════════
-          EARNINGS TABLE
-      ════════════════════════════════════════════════════════════ */}
-      <AnimatedSection className="py-20 md:py-28 relative">
-        <div className="absolute inset-0 bg-[#0a0906]" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <motion.p
-              variants={fadeIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="text-[#d4a853] font-medium tracking-wider uppercase text-sm mb-3"
-            >
-              Earning Potential
-            </motion.p>
-            <motion.h2
-              variants={fadeIn}
-              custom={1}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold mb-4"
-            >
-              What You Could{' '}
-              <span className="bg-gradient-to-r from-[#f0d78c] via-[#d4a853] to-[#c9942e] bg-clip-text text-transparent">
-                Earn
-              </span>
-            </motion.h2>
-            <motion.p
-              variants={fadeIn}
-              custom={2}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="text-gray-400 max-w-2xl mx-auto"
-            >
-              Based on typical UK permanent recruitment fees (15&ndash;20% of salary) with a 50/50 split. Your share shown below.
-            </motion.p>
-          </div>
-
-          <motion.div
-            variants={scaleIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="rounded-2xl border border-white/[0.08] overflow-hidden">
-              {/* Header */}
-              <div className="grid grid-cols-4 bg-[#d4a853]/10 border-b border-white/[0.08]">
-                <div className="p-4 md:p-5 text-sm font-semibold text-[#d4a853] uppercase tracking-wider">Level</div>
-                <div className="p-4 md:p-5 text-sm font-semibold text-[#d4a853] uppercase tracking-wider text-center">Placements/mo</div>
-                <div className="p-4 md:p-5 text-sm font-semibold text-[#d4a853] uppercase tracking-wider text-center hidden sm:block">Total Fees</div>
-                <div className="p-4 md:p-5 text-sm font-semibold text-[#d4a853] uppercase tracking-wider text-right">Your Earnings</div>
-              </div>
-              {/* Rows */}
-              {earningTiers.map((tier, i) => (
-                <div
-                  key={tier.label}
-                  className={`grid grid-cols-4 ${
-                    i < earningTiers.length - 1 ? 'border-b border-white/[0.06]' : ''
-                  } ${i === earningTiers.length - 1 ? 'bg-[#d4a853]/[0.05]' : 'hover:bg-white/[0.02]'} transition-colors`}
-                >
-                  <div className="p-4 md:p-5">
-                    <span className="font-medium text-white">{tier.label}</span>
-                  </div>
-                  <div className="p-4 md:p-5 text-center text-gray-300">{tier.placements}</div>
-                  <div className="p-4 md:p-5 text-center text-gray-300 hidden sm:block">{tier.fee}</div>
-                  <div className="p-4 md:p-5 text-right">
-                    <span className={`font-bold ${i === earningTiers.length - 1 ? 'text-[#d4a853] text-lg' : 'text-white'}`}>
-                      {tier.monthly}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="text-center text-gray-500 text-sm mt-4">
-              Figures are illustrative and based on average UK recruitment placement fees. Actual earnings depend on individual effort and sector.
-            </p>
-          </motion.div>
         </div>
       </AnimatedSection>
 
