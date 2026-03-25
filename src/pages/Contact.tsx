@@ -84,10 +84,9 @@ export default function Contact() {
       }
 
       await emailjs.send(
-        'service_l7eb08w', // Your EmailJS service ID
-        'template_1gy2ljs', // Your template ID
-        templateParams,
-        'I9jsCcLG5BmWrWZXx' // Your public key
+        'service_l7eb08w',
+        'template_1gy2ljs',
+        templateParams
       )
 
       setSubmitSuccess(true)

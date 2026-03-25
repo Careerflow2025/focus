@@ -49,8 +49,7 @@ export default function Footer() {
       await emailjs.send(
         'service_l7eb08w',
         'template_1gy2ljs',
-        templateParams,
-        'I9jsCcLG5BmWrWZXx'
+        templateParams
       )
 
       setSubmitStatus('success')
