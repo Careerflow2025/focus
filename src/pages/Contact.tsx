@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 
 type FormData = {
   name: string
@@ -74,20 +73,23 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
+      const body = new URLSearchParams({
+        'form-name': 'contact',
+        name: formData.name,
+        email: formData.email,
         message: formData.message,
         type: formData.type,
         service: formData.service,
-        cv_name: formData.cv?.name || 'No CV attached'
-      }
+        cv: formData.cv?.name || 'No CV attached',
+      })
 
-      await emailjs.send(
-        'service_l7eb08w',
-        'template_1gy2ljs',
-        templateParams
-      )
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      })
+
+      if (!res.ok) throw new Error('Form submission failed')
 
       setSubmitSuccess(true)
       setFormData({
@@ -99,7 +101,7 @@ export default function Contact() {
         service: ''
       })
     } catch (error) {
-      console.error('Error sending email:', error)
+      console.error('Error sending form:', error)
       setSubmitError('Failed to send message. Please try again later.')
     } finally {
       setIsSubmitting(false)

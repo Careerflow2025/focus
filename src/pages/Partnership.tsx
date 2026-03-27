@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 
 // ── animation variants ──────────────────────────────────────────────
 const fadeIn = {
@@ -227,7 +226,7 @@ export default function Partnership() {
     return Object.keys(e).length === 0
   }
 
-  // ── submit ──────────────────────────────────────────────────────
+  // ── submit via Netlify Forms ─────────────────────────────────────
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!validate()) return
@@ -235,29 +234,26 @@ export default function Partnership() {
     setSubmitStatus('idle')
 
     try {
-      const templateParams = {
-        from_name: formData.fullName,
-        from_email: formData.email,
-        message: [
-          'PARTNERSHIP APPLICATION',
-          '',
-          'Name: ' + formData.fullName,
-          'Email: ' + formData.email,
-          'Phone: ' + formData.phone,
-          'Location: ' + formData.location,
-          'Experience: ' + (formData.experience || 'None'),
-          'Preferred Industry: ' + (formData.industry || 'Not specified'),
-          'Availability: ' + (formData.availability || 'Not specified'),
-          '',
-          'Motivation:',
-          formData.motivation,
-        ].join('\n'),
-      }
-      await emailjs.send(
-        'service_l7eb08w',
-        'template_1gy2ljs',
-        templateParams
-      )
+      const body = new URLSearchParams({
+        'form-name': 'partnership',
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        location: formData.location,
+        experience: formData.experience || '',
+        industry: formData.industry || '',
+        availability: formData.availability || '',
+        motivation: formData.motivation,
+      })
+
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      })
+
+      if (!res.ok) throw new Error('Form submission failed')
+
       setSubmitStatus('success')
       setFormData({
         fullName: '',
@@ -270,7 +266,7 @@ export default function Partnership() {
         motivation: '',
       })
     } catch (error) {
-      console.error('Partnership form EmailJS error:', error)
+      console.error('Partnership form error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

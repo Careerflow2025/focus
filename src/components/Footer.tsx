@@ -1,6 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
 
 const navigation = {
   main: [
@@ -41,16 +40,18 @@ export default function Footer() {
     setSubmitStatus('idle')
 
     try {
-      const templateParams = {
-        from_email: email,
-        message: 'Newsletter Subscription Request'
-      }
+      const body = new URLSearchParams({
+        'form-name': 'newsletter',
+        email: email,
+      })
 
-      await emailjs.send(
-        'service_l7eb08w',
-        'template_1gy2ljs',
-        templateParams
-      )
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      })
+
+      if (!res.ok) throw new Error('Newsletter submission failed')
 
       setSubmitStatus('success')
       setEmail('')
