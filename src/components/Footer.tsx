@@ -40,15 +40,15 @@ export default function Footer() {
     setSubmitStatus('idle')
 
     try {
-      const body = new URLSearchParams({
-        'form-name': 'newsletter',
-        email: email,
-      })
-
-      const res = await fetch('/', {
+      const res = await fetch('https://formsubmit.co/ajax/info@focusrecruitment.co.uk', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'New Newsletter Subscription',
+          _template: 'table',
+          Email: email,
+          Message: 'Newsletter Subscription Request',
+        }),
       })
 
       if (!res.ok) throw new Error('Newsletter submission failed')

@@ -73,20 +73,19 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
-      const body = new URLSearchParams({
-        'form-name': 'contact',
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-        type: formData.type,
-        service: formData.service,
-        cv: formData.cv?.name || 'No CV attached',
-      })
-
-      const res = await fetch('/', {
+      const res = await fetch('https://formsubmit.co/ajax/info@focusrecruitment.co.uk', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'New Contact Form Submission',
+          _template: 'table',
+          Name: formData.name,
+          Email: formData.email,
+          Type: formData.type,
+          Service: formData.service || 'N/A',
+          CV: formData.cv?.name || 'No CV attached',
+          Message: formData.message,
+        }),
       })
 
       if (!res.ok) throw new Error('Form submission failed')

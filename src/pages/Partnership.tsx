@@ -226,7 +226,7 @@ export default function Partnership() {
     return Object.keys(e).length === 0
   }
 
-  // ── submit via Netlify Forms ─────────────────────────────────────
+  // ── submit via Formsubmit.co ─────────────────────────────────────
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!validate()) return
@@ -234,22 +234,21 @@ export default function Partnership() {
     setSubmitStatus('idle')
 
     try {
-      const body = new URLSearchParams({
-        'form-name': 'partnership',
-        fullName: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        location: formData.location,
-        experience: formData.experience || '',
-        industry: formData.industry || '',
-        availability: formData.availability || '',
-        motivation: formData.motivation,
-      })
-
-      const res = await fetch('/', {
+      const res = await fetch('https://formsubmit.co/ajax/info@focusrecruitment.co.uk', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'New Partnership Application',
+          _template: 'table',
+          Name: formData.fullName,
+          Email: formData.email,
+          Phone: formData.phone,
+          Location: formData.location,
+          Experience: formData.experience || 'None',
+          'Preferred Industry': formData.industry || 'Not specified',
+          Availability: formData.availability || 'Not specified',
+          Motivation: formData.motivation,
+        }),
       })
 
       if (!res.ok) throw new Error('Form submission failed')
